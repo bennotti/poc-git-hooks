@@ -3,7 +3,7 @@ LC_ALL=C
 
 local_branch="$(git rev-parse --abbrev-ref HEAD)"
 
-valid_branch_regex="^(sprint[0-9])\/(feat|fix|doc|hotfix|refactor|refac|test)_(task|[a-zA-Z]+)_[0-9]+$"
+valid_branch_regex="^((sprint|epic|user_story)[0-9])\/(feat|fix|doc|hotfix|refactor|refac|test)_(task|[a-zA-Z]+)_[0-9]+$"
 
 message="\n\n\n"
 message+="Nome da branch esta invalida.\n"

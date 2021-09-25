@@ -9,7 +9,7 @@ merged_branch_name=$(echo $reflog_message | cut -d" " -f 4 | sed "s/://")
 
 # if the merged branch was master - don't do anything
 if [[ $merged_branch_name = "master" || $merged_branch_name = "main" ]]; then
-    echo "merged in master/main"
+    echo "merged in $merged_branch_name"
 
     exit 0
 fi
@@ -19,23 +19,19 @@ echo " "
 echo "You've just merged the branch \"$merged_branch_name\" into \"$branch_name\". "
 
 # Ask the question
-read -p "Do you want to delete the \"$merged_branch_name\" branch? (y/N) " answer
+# read -p "Do you want to delete the \"$merged_branch_name\" branch? (y/N) " answer
 
 # Check if the answer is a single lowercase Y
-if [[ "$answer" == "y" ]]; then
+# if [[ "$answer" == "y" ]]; then
 
     # Delete the local branch
-    echo "Deleting local branch \"$merged_branch_name\""
-    git branch -d $merged_branch_name
+    # echo "Deleting local branch \"$merged_branch_name\""
+    # git branch -d $merged_branch_name
 
     # Delete the remote branch
-    echo "Deleting remote branch"
-    git push origin --delete $merged_branch_name
-    exit 1
-else
-    echo "Did not delete the \"$merged_branch_name\" branch"
-fi
-
-echo "post-merge executado"
-
-exit 1
+    # echo "Deleting remote branch"
+    # git push origin --delete $merged_branch_name
+    # exit 1
+# else
+    # echo "Did not delete the \"$merged_branch_name\" branch"
+# fi

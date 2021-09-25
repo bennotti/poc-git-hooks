@@ -18,7 +18,21 @@ fi
 # Begin output
 echo " "
 echo "You've just merged the branch \"$merged_branch_name\" into \"$branch_name\". "
-exit 1
+
+IFS=. read -r major minor bugfix <<< "01.01.00"
+
+# Specify base 10 in case of leading zeroes (octal)
+((major=10#$major, minor=10#$minor, bugfix=10#$bugfix))
+
+if [[ $minor -eq 99 ]]; then
+    ((major++, minor=0))
+else
+    ((minor++))
+fi
+
+printf '%02d.%02d.%02d\n' "$major" "$minor" "$bugfix"
+
+exit 0
 # You've just merged the branch "sprint1/feat_task_3" into "develop". 
 
 # Ask the question

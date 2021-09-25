@@ -10,4 +10,5 @@ LC_ALL=C
 # To enable this hook, rename this file to "pre-merge-commit".
 
 echo "pre-merge-commit"
-exit 1
+
+exit 0

@@ -8,6 +8,18 @@ $ git config core.hooksPath .githooks
 ```
 <br/>
 
+### Branche names
+```
+sprint0/feat_task_0
+sprint0/fix_task_0
+sprint0/doc_task_0
+sprint0/hotfix_task_0
+sprint0/refactor_task_0
+sprint0/refac_task_0
+sprint0/test_task_0
+```
+<br/>
+
 ### Open Markdown Preview
 ```
 Ctrl+Shift+V

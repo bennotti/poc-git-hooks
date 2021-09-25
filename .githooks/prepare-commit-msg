@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+LC_ALL=C
 
 MESSAGE=$(cat $1) 
 TICKET=$(git rev-parse --abbrev-ref HEAD | grep -Eo '_[0-9]+' | grep -Eo '[0-9]+' | tr "[:lower:]" "[:upper:]")

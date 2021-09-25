@@ -12,11 +12,14 @@ if [[ $merged_branch_name = "master" || $merged_branch_name = "main" ]]; then
     echo "merged in $merged_branch_name"
 
     exit 0
+    return
 fi
 
 # Begin output
 echo " "
 echo "You've just merged the branch \"$merged_branch_name\" into \"$branch_name\". "
+exit 1
+# You've just merged the branch "sprint1/feat_task_3" into "develop". 
 
 # Ask the question
 # read -p "Do you want to delete the \"$merged_branch_name\" branch? (y/N) " answer

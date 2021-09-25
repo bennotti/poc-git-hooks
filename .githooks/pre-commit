@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+LC_ALL=C
+
+local_branch="$(git rev-parse --abbrev-ref HEAD)"
+
+valid_branch_regex="^(sprint[0-9])\/(feat|fix|doc|hotfix|refactor|refac|test)_[a-z0-9]+_[0-9]+$"
+
+message="\n\n\n"
+message+="Nome da branch esta invalida.\n"
+message+="O nome da branch deve estar no formato:\n\n\n"
+message+="sprint0/feat_title_0\n\n"
+message+="sprint0/fix_title_0\n\n"
+message+="sprint0/doc_title_0\n\n"
+message+="sprint0/hotfix_title_0\n\n"
+message+="sprint0/refactor_title_0\n\n"
+message+="sprint0/refac_title_0\n\n"
+message+="sprint0/test_title_0\n\n\n"
+message+="Altere o nome da branch."
+
+if [[ ! $local_branch =~ $valid_branch_regex ]]
+then
+    echo -e "$message"
+    exit 1
+fi
+
+exit 0

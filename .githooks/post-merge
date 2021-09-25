@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "post-merge"
+
+exit 1

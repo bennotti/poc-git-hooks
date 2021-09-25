@@ -1,14 +1,18 @@
-# POC-GIT-HOOKS
+## POC-GIT-HOOKS  
+#### v1.0.0  
+<br/>
 
 ### Share Git hooks with your team
 ```
 $ git config core.hooksPath .githooks
 ```
+<br/>
 
 ### Open Markdown Preview
 ```
 Ctrl+Shift+V
 ```
+<br/>
 
 ### Referências
 * https://githooks.com/
